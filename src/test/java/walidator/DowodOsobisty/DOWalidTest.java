@@ -10,11 +10,11 @@ public class DOWalidTest {
 
 	@Test
 	public void jesliDokumentJestNiePrawidlowyZwrocFalsz() {
-		assertFalse(dokument.walid("CCC111234"));
+		assertFalse(dokument.walid(""));
 	}
 
 	@Test
 	public void jesliDokumentJestPrawidlowyZwrocPrawde() {
-		assertTrue(dokument.walid("CAA304032"));
+		assertTrue(dokument.walid(""));
 	}
 }

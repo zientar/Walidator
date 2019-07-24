@@ -4,9 +4,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WartosciDlaZnakow {
+	private static WartosciDlaZnakow instancja;
+
+	public static WartosciDlaZnakow getInstancja() {
+		if (instancja == null) {
+			instancja = new WartosciDlaZnakow();
+		}
+		return instancja;
+	}
+
 	Map<Character, Integer> wartosci = new HashMap<Character, Integer>();
 
-	public WartosciDlaZnakow() {
+	private WartosciDlaZnakow() {
 		this.wartosci.put('A', 10);
 		this.wartosci.put('B', 11);
 		this.wartosci.put('C', 12);
@@ -34,6 +43,7 @@ public class WartosciDlaZnakow {
 		this.wartosci.put('Y', 34);
 		this.wartosci.put('Z', 35);
 	}
+
 	public Integer GetWartosc(Character znak) {
 		return wartosci.get(znak);
 	}

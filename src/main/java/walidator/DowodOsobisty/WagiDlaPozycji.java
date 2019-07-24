@@ -4,9 +4,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WagiDlaPozycji {
+	private static WagiDlaPozycji instancja;
+
+	public static WagiDlaPozycji getInstancja() {
+		if (instancja == null) {
+			instancja = new WagiDlaPozycji();
+		}
+		return instancja;
+	}
+
 	Map<Integer, Integer> wagi = new HashMap<Integer, Integer>();
 
-	public WagiDlaPozycji() {
+	private WagiDlaPozycji() {
 		this.wagi.put(0, 7);
 		this.wagi.put(1, 3);
 		this.wagi.put(2, 1);
@@ -20,4 +29,5 @@ public class WagiDlaPozycji {
 	public Integer GetWaga(Integer i) {
 		return wagi.get(i);
 	}
+
 }

@@ -6,8 +6,8 @@ public class DOWalid {
 
 	private void obliczSumeKontrolna(String dowod) {
 		int tmp = 0;
-		WartosciDlaZnakow t1 = new WartosciDlaZnakow();
-		WagiDlaPozycji t2 = new WagiDlaPozycji();
+		WartosciDlaZnakow t1 = WartosciDlaZnakow.getInstancja();
+		WagiDlaPozycji t2 = WagiDlaPozycji.getInstancja();
 		for (int i = 0; i <= 2; i++) {
 			tmp += (t1.GetWartosc(dowod.charAt(i)) * t2.GetWaga(i));
 		}
@@ -31,7 +31,7 @@ public class DOWalid {
 	public boolean walid(String dowod) {
 
 		try {
-			if(!sprawdzDlugosc(dowod)) {
+			if (!sprawdzDlugosc(dowod)) {
 				return false;
 			}
 			obliczSumeKontrolna(dowod);
