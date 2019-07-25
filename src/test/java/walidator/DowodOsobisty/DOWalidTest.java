@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 public class DOWalidTest {
-	DOWalid dokument = new DOWalid();
+	DOWalid dokument = DOWalid.getInstancja();
 
 	@Test
 	public void jesliDokumentJestNiePrawidlowyZwrocFalsz() {

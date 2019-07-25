@@ -3,19 +3,19 @@ package walidator.DowodOsobisty;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WagiDlaPozycji {
-	private static WagiDlaPozycji instancja;
+public class WagiDlaPozycjiDO {
+	private static WagiDlaPozycjiDO instancja;
 
-	public static WagiDlaPozycji getInstancja() {
+	public static WagiDlaPozycjiDO getInstancja() {
 		if (instancja == null) {
-			instancja = new WagiDlaPozycji();
+			instancja = new WagiDlaPozycjiDO();
 		}
 		return instancja;
 	}
 
 	Map<Integer, Integer> wagi = new HashMap<Integer, Integer>();
 
-	private WagiDlaPozycji() {
+	private WagiDlaPozycjiDO() {
 		this.wagi.put(0, 7);
 		this.wagi.put(1, 3);
 		this.wagi.put(2, 1);

@@ -1,13 +1,25 @@
 package walidator.DowodOsobisty;
 
 public class DOWalid {
+	private static DOWalid instancja;
+	public static DOWalid getInstancja() {
+		if(instancja == null) {
+			instancja = new DOWalid();
+		}
+		return instancja;
+	}
 	private Integer cyfraKontrolna;
+
 	private Integer sumaKontrolna;
+
+	private DOWalid() {
+
+	}
 
 	private void obliczSumeKontrolna(String dowod) {
 		int tmp = 0;
 		WartosciDlaZnakow t1 = WartosciDlaZnakow.getInstancja();
-		WagiDlaPozycji t2 = WagiDlaPozycji.getInstancja();
+		WagiDlaPozycjiDO t2 = WagiDlaPozycjiDO.getInstancja();
 		for (int i = 0; i <= 2; i++) {
 			tmp += (t1.GetWartosc(dowod.charAt(i)) * t2.GetWaga(i));
 		}
